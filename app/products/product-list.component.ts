@@ -4,7 +4,6 @@ import { ProductService } from './product.service'
 
 @Component({
     moduleId: module.id,
-    selector: 'pm-products',
     templateUrl: 'product-list.component.html',
     styleUrls: ['product-list.component.css'],
 })
@@ -17,11 +16,15 @@ export class ProductListComponent implements OnInit {
     listFilter: string;
     message: string;
     products: IProduct[];
+    errorMessage: string;
 
     constructor(private _productService: ProductService) { }
 
     ngOnInit(): void {
-        this.products = this._productService.getProducts()
+        this._productService.getProducts()
+            .subscribe(
+            products => this.products = products,
+            error => this.errorMessage = <any>error);
     }
 
     toggleImage(): void {
