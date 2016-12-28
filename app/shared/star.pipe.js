@@ -9,20 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var product_service_1 = require("./products/product.service");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = 'David Shusterman\'s First Angular 2 Application';
+var StarPipe = (function () {
+    function StarPipe() {
     }
-    return AppComponent;
+    return StarPipe;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'pm-app',
-        template: "\n    <div><h1>{{pageTitle}}</h1></div>\n    <pm-products></pm-products>\n    ",
-        providers: [product_service_1.ProductService]
+StarPipe = __decorate([
+    core_1.Pipe({
+        name: 'number'
     }),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], StarPipe);
+exports.StarPipe = StarPipe;
+//# sourceMappingURL=star.pipe.js.map
