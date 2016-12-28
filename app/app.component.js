@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 var product_service_1 = require("./products/product.service");
 var AppComponent = (function () {
     function AppComponent() {
@@ -20,7 +21,7 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
         template: "\n    <div><h1>{{pageTitle}}</h1></div>\n    <pm-products></pm-products>\n    ",
-        providers: [product_service_1.ProductService]
+        providers: [product_service_1.ProductService, http_1.HttpModule]
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
